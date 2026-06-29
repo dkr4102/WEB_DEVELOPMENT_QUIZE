@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body 
+    
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: black;
+    text-align: center;
+}
+
+ .info_box, .quiz_box, .result_box {
+    width: 500px; /* Increased width */
+    /* background: rgb(0, 0, 0); */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    color: white;
+    /* text-align: left; */
+}
+
+.start_btn button,
+.buttons button,
+.next_btn,
+.restart {
+    --glow-color: rgb(271, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --enhanced-glow-color: rgba(231, 206, 255);
+    --btn-color: rgb(100, 61, 136);
+    background-color: var(--btn-color);
+    color: var(--glow-color);
+    padding: 1em 3em;
+    border: 0.25em solid var(--glow-color);
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    outline: none;
+    box-shadow: 0 0 1em var(--glow-color),
+        0 0 4em var(--glow-spread-color);
+        inset: 0 0 0.75em 0.4em var(--glow-color);
+    border-radius: 1em;
+    position: relative;
+    transition: all 0.3s ;
+}
+    button::after {
+        pointer-events: none;
+        content: "";
+        position: absolute;
+        top: 40%;
+        left: 0%;
+        height: 200%;
+        width: 100%;
+        background-color: var(--glow-spread-color);
+        filter: blur(2.5em);
+        opacity: 0.5;
+        transform: perspective(0.8em) rotateX(9deg) scale(1,0.5);
+    }
+
+    button:hover {
+        color: var(--btn-color);
+        background-color: var(--glow-color);
+        box-shadow: 0 0 1em var(--glow-color),
+            0 0 4em 2em var(--glow-spread-color),
+            inset 0 0 0.5em 0.25em var(--glow-color);
+    }
+    button:active {
+        box-shadow: 0 0 0.6em var(--glow-color),
+            0 0 2.5em 2em var(--glow-spread-color),
+            inset 0 0 0.5em 0.25em var(--glow-color);
+    }
+
+
+.start_btn button:hover,
+.buttons button:hover,
+.next_btn:hover,
+.restart:hover {
+    background-color:var(--glow-color);
+}
+
+.info_box, .quiz_box, .result_box {
+    display: none;
+}
+
+.quiz_box {
+    padding: 20px;
+    text-align: left;
+}
+
+.quiz_box header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+.quiz_box .option_list {
+    margin-top: 15px;
+}
+
+.option {
+    background: #be4fff;
+    padding: 12px;
+    margin: 8px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.option:hover {
+    background: #90caf9;
+}
+
+.option.correct {
+    background: #388e3c;
+    color: white;
+}
+
+.option.incorrect {
+    background: #d32f2f;
+    color: white;
+}
+
+.option span {
+    flex: 1;
+}
+
+.timer {
+    font-size: 16px;
+    font-weight: bold;
+    color: red;
+    background: #ffeb3b;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* ✅ Bigger quiz box */
+.quiz_box {
+    width: 550px;
+    min-height: 400px;
+}
+
+/* ✅ "1 of 10 Questions" block properly positioned */
+.total_que {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.next_btn {
+    display: none;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.restart {
+    background-color: var(--btn-color);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+    border-radius: 10em;
+    transition: 0.3s;
+    --glow-color: rgb(271, 176, 255);
+        --glow-spread-color: rgba(191, 123, 255, 0.781);
+        --enhanced-glow-color: rgba(231, 206, 255);
+        --btn-color: rgb(100, 61, 136);
+}
+
+.restart:hover {
+    background-color: var(--glow-color);
+    color: var(--btn-color);
+}

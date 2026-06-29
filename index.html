@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    p{
+        text-align: left;
+    }
+</style>
+<body>
+    
+    <!-- Start Button -->
+    <div class="start_btn">
+        <button>Start Quiz</button>
+    </div>
+
+    <!-- Rules Box -->
+    <div class="info_box">
+        <div class="info_title">Quiz Rules</div><br><br><br>
+        <div class="info_list">
+            <header>
+                <p>1. You have 15 seconds for each question.</p><br>
+                <p>2. You can skip a question.</p><br>
+                <p>3. You can review your answers at the end.</p><br>
+                <p>4. Click on the continue button to start the quiz.</p><br>
+                <p>5. Click on the exit button to leave the quiz.</p><br>
+        </div>
+        <div class="buttons">
+            <button class="exit">Exit Quiz</button>
+            <button class="continue">Continue</button>
+        </div>
+    </div>
+
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+        <header>
+            <div class="title">Quiz Application</div>
+            <div class="timer">Time Left: <span class="timer_sec">15</span> sec</div>
+        </header>
+        <section>
+            <div class="que_text"></div>
+            <div class="option_list"></div>
+        </section>
+        <footer>
+            <button class="next_btn">Next Question</button><br>
+            <div class="total_que">1 of 10 Questions</div><br>
+        </footer>
+    </div>
+
+    <!-- Result Box -->
+    <div class="result_box">
+        <h2>Quiz Completed!</h2><br><br><br><br><br><br><br><br><br>
+        <p class="score_text">You scored <span></span> out of <span></span></p><br>
+        <p class="score_text"></p>
+        <button class="restart">Restart Quiz</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
